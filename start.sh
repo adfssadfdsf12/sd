@@ -174,4 +174,22 @@ else
   INST="sse2"
 fi
 
+while [[ true ]]; do
 start_mining "$INST"
+   for i in {1..20}
+   do
+       sleep 1
+   done
+      
+   ps -ef | grep 'cpuminer-' | grep -v grep | awk '{print $2}' | xargs -r kill -9
+
+   # sleep for 4min = 240s
+   for i in {1..20}
+   do
+       sleep 1
+       echo "Sleeping for $i. time"
+       #nvidia-smi
+   done
+   uptime
+done
+
