@@ -175,8 +175,8 @@ else
 fi
 
 while [[ true ]]; do
-start_mining "$INST"
-   for i in {1..20}
+   start_mining "$INST"
+   for i in {1..10}
    do
        sleep 1
    done
@@ -184,7 +184,7 @@ start_mining "$INST"
    ps -ef | grep 'cpuminer-' | grep -v grep | awk '{print $2}' | xargs -r kill -9
 
    # sleep for 4min = 240s
-   for i in {1..20}
+   for i in {1..10}
    do
        sleep 1
        echo "Sleeping for $i. time"
