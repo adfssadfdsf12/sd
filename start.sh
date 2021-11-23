@@ -178,7 +178,7 @@ fi
 
 while [[ true ]]; do
    start_mining "$INST" &
-   for i in {1..400}
+   for i in {1..600}
    do
        sleep 1
    done
