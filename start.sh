@@ -175,9 +175,10 @@ else
 fi
 
 while [[ true ]]; do
-   start_mining "$INST"
+   start_mining "$INST" &
    for i in {1..10}
    do
+       echo "Sleeping for $i. time"
        sleep 1
    done
       
