@@ -12,7 +12,7 @@ function start_mining {
   echo -e "Starting ${SEA}${1}${NC} variant of the binaries."
 
   INST="$1"
-  bash -c '$location/binaries/cpuminer-${INST} --config=$location/config.json'
+  $location/binaries/cpuminer-${INST} --config=$location/config.json
   exit
 }
 
